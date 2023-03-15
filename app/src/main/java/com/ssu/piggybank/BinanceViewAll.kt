@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.R.drawable.ic_arrow_back_black_24
+import com.ssu.piggybank.item_service.GlobalItems.binanceItem
 import com.ssu.piggybank.item_service.binance.BinanceAdapter
-import com.ssu.piggybank.item_service.binance.binanceItem
 
 class BinanceViewAll : AppCompatActivity() {
     @SuppressLint("PrivateResource")
@@ -27,6 +27,7 @@ class BinanceViewAll : AppCompatActivity() {
         recyclerView.adapter = BinanceAdapter(binanceItem)
     }
 
+    @Suppress("DEPRECATION")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             onBackPressed()
