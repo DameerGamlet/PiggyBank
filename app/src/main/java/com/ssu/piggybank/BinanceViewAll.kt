@@ -17,7 +17,7 @@ class BinanceViewAll : AppCompatActivity() {
         setContentView(R.layout.activity_binance_view_all)
 
         supportActionBar?.apply {
-            title = "Current balance"
+            title = "My finance"
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(ic_arrow_back_black_24)
         }
