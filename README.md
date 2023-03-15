@@ -12,3 +12,5 @@
     <td><img src="https://user-images.githubusercontent.com/74682814/225356952-4d4ee333-b033-41a4-abf5-95cfc36f45b0.png" alt="View all balance"></td>
   </tr>
 </table>
+
+Тут 2 RecycleView, это Transfer и список финансов
