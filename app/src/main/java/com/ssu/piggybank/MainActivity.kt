@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.apply {
+            title = "Home"
+        }
+
+
         val binanceButton: ImageButton = findViewById(R.id.next)
         binanceButton.setOnClickListener {
             val intent = Intent(this, CurrentBalanceActivity::class.java)

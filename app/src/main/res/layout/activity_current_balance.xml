@@ -8,26 +8,14 @@
     tools:context=".CurrentBalanceActivity"
     android:background="@drawable/background">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_media_previous"
-        android:contentDescription="Back" />
-
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
@@ -40,7 +28,7 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
             android:background="@drawable/circle"
-            android:contentDescription="TODO"
+            android:contentDescription="@string/regular_avatar_desc"
             android:src="@drawable/avatar" />
 
         <LinearLayout
@@ -56,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Current Balance"
+                android:text="@string/current_balance"
                 android:textColor="#CEC8D3"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -65,9 +53,8 @@
                 android:id="@+id/balance_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/current_balance_label"
                 android:gravity="center"
-                android:text="$5,700"
+                android:text="@string/example_balance"
                 android:textColor="#F4F4F5"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -88,10 +75,10 @@
         app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Transfer"
+            android:text="@string/transfer"
             android:textColor="#F4F4F5"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -99,193 +86,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="View all"
+            android:text="@string/view_all"
             android:textColor="#7D7CA1"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/transfer_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
+        android:clipToPadding="false"
+        android:padding="10dp"
+        android:scrollbars="horizontal"
         android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="MissingConstraints">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/gradient_background">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_above="@+id/f1"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="33dp"
-                    android:src="@drawable/topup" />
-
-                <TextView
-                    android:id="@+id/f1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="22dp"
-                    android:text="Topup"
-                    android:textColor="#F4F4F5"
-                    android:textSize="12sp"
-                    android:textStyle="normal" />
-
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/gradient_background">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_above="@+id/f2"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="33dp"
-                    android:src="@drawable/send" />
-
-                <TextView
-                    android:id="@+id/f2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="23dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="23dp"
-                    android:text="Send"
-                    android:textColor="#F4F4F5"
-                    android:textSize="12sp"
-                    android:textStyle="normal" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/gradient_background">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_above="@+id/f3"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="33dp"
-                    android:src="@drawable/payment" />
-
-                <TextView
-                    android:id="@+id/f3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="23dp"
-                    android:text="Payment"
-                    android:textColor="#F4F4F5"
-                    android:textSize="12sp"
-                    android:textStyle="normal" />
-
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:background="@drawable/gradient_background">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_above="@+id/f4"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginStart="33dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="33dp"
-                    android:src="@drawable/request" />
-
-                <TextView
-                    android:id="@+id/f4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="24dp"
-                    android:text="Request"
-                    android:textColor="#F4F4F5"
-                    android:textSize="12sp"
-                    android:textStyle="normal" />
-
-            </RelativeLayout>
-        </LinearLayout>
-    </LinearLayout>
+        app:spanCount="2" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -295,7 +114,7 @@
         android:layout_marginVertical="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/transfer_view">
 
         <LinearLayout
             android:id="@+id/first_container"
@@ -314,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="Expense This Month"
+                android:text="@string/expense_this_month"
                 android:textColor="#F4F4F5"
                 android:textSize="16sp" />
 
@@ -323,7 +142,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="$630.45 Save"
+                android:text="@string/example_expense"
                 android:textColor="#7D7CA1"
                 android:textSize="14sp" />
 
@@ -337,7 +156,8 @@
             android:src="@drawable/chart"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/graph_example" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -358,14 +178,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Recent Transaction"
+                android:text="@string/recent_transaction"
                 android:textColor="#F4F4F5"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -374,7 +194,7 @@
                 android:id="@+id/text_view_view_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View all"
+                android:text="@string/view_all"
                 android:textColor="#7D7CA1"
                 android:textSize="14sp"
                 android:textStyle="bold" />

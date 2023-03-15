@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PiggyBank</string>
+    <string name="header_finance">My finances</string>
+    <string name="little_icon_desc">center icon</string>
+    <string name="example_value">Example</string>
+    <string name="regular_avatar_desc">Regular avatar</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="example_balance">$5,700</string>
+    <string name="transfer">Transfer</string>
+    <string name="view_all">View all</string>
+    <string name="expense_this_month">Expense This Month</string>
+    <string name="example_expense">$630.45 Save</string>
+    <string name="recent_transaction">Recent Transaction</string>
+    <string name="graph_example">Graph example</string>
 </resources>

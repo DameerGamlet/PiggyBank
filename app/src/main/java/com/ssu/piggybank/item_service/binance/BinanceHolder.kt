@@ -1,4 +1,4 @@
-package com.ssu.piggybank.item_service
+package com.ssu.piggybank.item_service.binance
 
 import android.view.View
 import android.widget.ImageView

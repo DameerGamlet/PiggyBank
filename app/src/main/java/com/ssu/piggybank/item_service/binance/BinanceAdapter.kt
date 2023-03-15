@@ -1,13 +1,11 @@
-package com.ssu.piggybank.item_service
+package com.ssu.piggybank.item_service.binance
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ssu.piggybank.CurrentBalanceActivity
 import com.ssu.piggybank.R
-import com.ssu.piggybank.item_service.BinanceItem;
 
-class BinanceItemAdapter(private val items: List<CurrentBalanceActivity.BinanceItem>) :
+class BinanceAdapter(private val items: List<BinanceItem>) :
     RecyclerView.Adapter<BinanceHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BinanceHolder {
