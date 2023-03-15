@@ -12,10 +12,10 @@
         android:theme="@style/Theme.PiggyBank"
         tools:targetApi="31">
         <activity
-            android:name=".CurrentBalanceActivity"
+            android:name=".BinanceViewAll"
             android:exported="false" />
         <activity
-            android:name=".BalanceActivity"
+            android:name=".CurrentBalanceActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

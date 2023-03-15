@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="5dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/binance_image"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/avatar" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/binance_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amazon"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#F4F4F5"
+            android:fontFamily="sans-serif" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/binance_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sep 3, 2023"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#7D7CA1"
+                android:fontFamily="sans-serif" />
+
+            <TextView
+                android:id="@+id/binance_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+$340"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#36E7A2"
+                android:fontFamily="sans-serif"
+                android:textAlignment="textEnd" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
