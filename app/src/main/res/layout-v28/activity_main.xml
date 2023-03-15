@@ -9,7 +9,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView8"
         android:layout_width="262dp"
         android:layout_height="159dp"
         android:layout_marginStart="30dp"
@@ -18,7 +17,7 @@
         android:fontFamily="sans-serif-medium"
         android:lineSpacingExtra="6sp"
         android:text="@string/simple_way"
-        android:textColor="#F9F9F9"
+        android:textColor="@color/white_custom"
         android:textFontWeight="500"
         android:textSize="34sp"
         android:textStyle="normal"
@@ -29,7 +28,6 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="354dp"
         android:layout_height="516dp"
         android:layout_marginTop="4dp"
@@ -37,7 +35,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/card" />
+        app:srcCompat="@drawable/card"
+        android:contentDescription="@string/welcome_desc" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -50,13 +49,12 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Skip"
+            android:text="@string/skip"
             android:textColor="@color/white"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <ImageButton
             android:id="@+id/next"
@@ -65,7 +63,8 @@
             android:layout_weight="1"
             android:src="@drawable/next"
             android:layout_marginStart="200dp"
-            app:srcCompat="@drawable/next" />
+            app:srcCompat="@drawable/next"
+            android:contentDescription="@string/next" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

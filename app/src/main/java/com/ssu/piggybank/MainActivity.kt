@@ -4,20 +4,22 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import com.ssu.piggybank.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.apply {
             title = "Home"
         }
 
-
-        val binanceButton: ImageButton = findViewById(R.id.next)
-        binanceButton.setOnClickListener {
+        binding.next.setOnClickListener {
             val intent = Intent(this, CurrentBalanceActivity::class.java)
             startActivity(intent)
         }

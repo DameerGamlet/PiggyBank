@@ -7,8 +7,8 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.R.drawable.ic_arrow_back_black_24
+import com.ssu.piggybank.databinding.ActivityCurrentBalanceBinding
 import com.ssu.piggybank.item_service.GlobalItems.binanceItem
 import com.ssu.piggybank.item_service.GlobalItems.transferItems
 import com.ssu.piggybank.item_service.binance.BinanceAdapter
@@ -16,10 +16,13 @@ import com.ssu.piggybank.item_service.transfer.TransferAdapter
 
 class CurrentBalanceActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityCurrentBalanceBinding
+
     @SuppressLint("PrivateResource")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_current_balance)
+        binding = ActivityCurrentBalanceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         supportActionBar?.apply {
             title = "Current balance"
@@ -30,16 +33,17 @@ class CurrentBalanceActivity : AppCompatActivity() {
         val shortTransfer = transferItems.take(4)
         val shortBinance = binanceItem.take(4)
 
-        val transferRecyclerView: RecyclerView = findViewById(R.id.transfer_view)
-        transferRecyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
-        transferRecyclerView.adapter = TransferAdapter(shortTransfer)
+        binding.transferView.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = TransferAdapter(shortTransfer)
+        }
 
-        val binanceRecyclerView: RecyclerView = findViewById(R.id.binance_item_recycle)
-        binanceRecyclerView.layoutManager = LinearLayoutManager(this)
-        binanceRecyclerView.adapter = BinanceAdapter(shortBinance)
+        binding.binanceItemRecycle.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = BinanceAdapter(shortBinance)
+        }
 
-        val textViewViewAll = findViewById<TextView>(R.id.text_view_view_all)
-        textViewViewAll.setOnClickListener {
+        binding.textViewViewAll.setOnClickListener {
             val intent = Intent(this, BinanceViewAll::class.java)
             startActivity(intent)
         }
